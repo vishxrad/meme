@@ -1,0 +1,9 @@
+<h1>This is the homepage</h1>
+
+{% if user.is_authenticated %}
+    <h2>Welcome, {{user.username}}</h2>
+    <a href="logout">Logout</a>
+{% else %}
+    <a href="login">Login</a>
+    <a href="register">Register</a>
+{% endif %}
