@@ -1,39 +1,42 @@
-<h1>Sign up below</h1> 
-<style>
-    h5 {
-        color: red;
-    }
-</style>
-{% for message in messages %}
-<h5>{{message}}</h5>
-{% endfor %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/main.css' %}">
+</head>
+<body>
+    <h1>Sign up below</h1> 
+    {% for message in messages %}
+    <h5>{{message}}</h5>
+    {% endfor %}
 
-<form method="POST" action="register">
-    {% csrf_token %}
-    <p>Username</p>
-    <input type="text" name="username"/>
+    <form method="POST" action="register">
+        {% csrf_token %}
+        <p>Username</p>
+        <input type="text" name="username"/>
 
-    <p>First Name</p>
-    <input type="text" name="first_name"/>
+        <p>First Name</p>
+        <input type="text" name="first_name"/>
 
-    <p>Last Name</p>
-    <input type="text" name="last_name"/>
+        <p>Last Name</p>
+        <input type="text" name="last_name"/>
 
-    <p>Age</p>
-    <input type="number" name="age"/>
+        <p>Age</p>
+        <input type="number" name="age"/>
 
-    <p>Email</p>
-    <input type="email" name="email"/>
+        <p>Email</p>
+        <input type="email" name="email"/>
 
-    <p>Password</p>
-    <input type="password" name="password"/>
+        <p>Password</p>
+        <input type="password" name="password"/>
 
-    <p>Repeat Password</p>
-    <input type="password" name="password2"/>
+        <p>Confirm Password</p>
+        <input type="password" name="password2"/>
 
-    
-    <br>
-
-    <input type="submit"/>
-    
-</form>
+        <input type="submit" value="Register"/>
+    </form>
+</body>
+</html>
