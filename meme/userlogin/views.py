@@ -60,3 +60,6 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return redirect('/')
+
+def profile(request, pk):
+    return render(request, 'profile.html', {'pk': pk})
